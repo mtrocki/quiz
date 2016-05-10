@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Preguntas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h2>Preguntas</h2>
+    <table>
+      <% var i; for (i=0; i < quizes.length; i++) { %>
+        <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td></tr>
+      <% } %>
+    </table>
+    <form method="get" action="/quizes">
+      <h3>Buscador de preguntas</h3>
+      <input type="text" id="search" name="search" placeholder="Texto a buscar" /><br>
+      <input type="submit" value="Enviar"/>
+    </form>
+  </body>
+</html>
